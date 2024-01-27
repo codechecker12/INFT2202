@@ -1,94 +1,48 @@
 // ADDING ITEMS TO START AND END OF LIST
 // Get the <ul> element
-let elememt  = document.getElementById(element,"thellist");
+let theList = document.getElementById("thelist");
 
 // ADD NEW ITEM TO END OF LIST
 // Create element
-let element =document.createElement (tagName,"li");
+let newElement = document.createElement("li");
 // Create text node
-let text = document.createTextNode(data,"cream");
-
+let newText = document.createTextNode("cream");
 // Add text node to element
-element.appendChild(text);
-//a comment 23456
-// Add element end of list
-FileList.insertBefore(element, llist.firstChild);
+newElement.appendChild(newText);
+// Add element to the end of the list
+theList.appendChild(newElement);
+
 // ADD NEW ITEM START OF LIST
 // Create element
+let newElementStart = document.createElement("li");
 // Create text node
+let newTextStart = document.createTextNode("sugar");
 // Add text node to element
-// Add element to list
-
-
+newElementStart.appendChild(newTextStart);
+// Add element to the start of the list
+theList.insertBefore(newElementStart, theList.firstChild);
 
 // All <li> elements
+let allListItems = document.querySelectorAll('li');
 
 // ADD A CLASS OF COOL TO ALL LIST ITEMS
 // Counter variable
+let i;
 // Loop through elements
-// Change class to cool
-
+for (i = 0; i < allListItems.length; i++) {
+    // Change class to cool
+    allListItems[i].classList.add('cool');
+}
 
 // ADD NUMBER OF ITEMS IN THE LIST TO THE HEADING
 // h2 element
-// h2 text
+let heading = document.querySelector('h2');
 // No. of <li> elements
+let numberOfItems = allListItems.length;
 // Content
+let headingContent = 'Buy groceries - ' + numberOfItems + ' items';
 // Update h2 using innerHTML (not textContent) because it contains markup
-
-
-
-
-
-
-
-
-// // ADDING ITEMS TO START AND END OF LIST
-// // Get the <ul> element
-// var myList = document.querySelector('ul');
-
-// // ADD NEW ITEM TO END OF LIST
-// // Create element
-// var newItemEnd = document.createElement('li');
-// // Create text node
-// var newItemEndText = document.createTextNode('New Item End');
-// // Add text node to element
-// newItemEnd.appendChild(newItemEndText);
-// // Add element end of list
-// myList.appendChild(newItemEnd);
-
-// // ADD NEW ITEM START OF LIST
-// // Create element
-// var newItemStart = document.createElement('li');
-// // Create text node
-// var newItemStartText = document.createTextNode('New Item Start');
-// // Add text node to element
-// newItemStart.appendChild(newItemStartText);
-// // Add element to list
-// myList.insertBefore(newItemStart, myList.firstChild);
-
-// // All <li> elements
-// var allListItems = document.querySelectorAll('li');
-
-// // ADD A CLASS OF COOL TO ALL LIST ITEMS
-// // Counter variable
-// var i;
-// // Loop through elements
-// for (i = 0; i < allListItems.length; i++) {
-//     // Change class to cool
-//     allListItems[i].classList.add('cool');
-// }
-
-// // ADD NUMBER OF ITEMS IN THE LIST TO THE HEADING
-// // h2 element
-// var heading = document.querySelector('h2');
-// // No. of <li> elements
-// var numberOfItems = allListItems.length;
-// // Content
-// var headingContent = 'Buy groceries - ' + numberOfItems + ' items';
-// // Update h2 using innerHTML (not textContent) because it contains markup
-// heading.innerHTML = headingContent;
-
+heading.innerHTML = headingContent;
 
 
 
