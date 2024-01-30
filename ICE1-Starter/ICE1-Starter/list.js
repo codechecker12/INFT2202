@@ -1,48 +1,63 @@
+
+
+
 // ADDING ITEMS TO START AND END OF LIST
 // Get the <ul> element
-let theList = document.getElementById("thelist");
+const list = document.querySelector('ul');
 
 // ADD NEW ITEM TO END OF LIST
 // Create element
-let newElement = document.createElement("li");
+const newEndItem = document.createElement('li');
+
 // Create text node
-let newText = document.createTextNode("cream");
+const endItemText = document.createTextNode('Olive Oil');
+
 // Add text node to element
-newElement.appendChild(newText);
+newEndItem.appendChild(endItemText);
+
 // Add element to the end of the list
-theList.appendChild(newElement);
+list.appendChild(newEndItem);
 
 // ADD NEW ITEM START OF LIST
 // Create element
-let newElementStart = document.createElement("li");
+const newStartItem = document.createElement('li');
+
 // Create text node
-let newTextStart = document.createTextNode("sugar");
+const startItemText = document.createTextNode('Avocado & Guacamole');
+
 // Add text node to element
-newElementStart.appendChild(newTextStart);
+newStartItem.appendChild(startItemText);
+
 // Add element to the start of the list
-theList.insertBefore(newElementStart, theList.firstChild);
+list.insertBefore(newStartItem, list.firstElementChild);
 
 // All <li> elements
-let allListItems = document.querySelectorAll('li');
+const listItems = document.querySelectorAll('li');
 
 // ADD A CLASS OF COOL TO ALL LIST ITEMS
 // Counter variable
-let i;
+let counter = 1;
+
 // Loop through elements
-for (i = 0; i < allListItems.length; i++) {
-    // Change class to cool
-    allListItems[i].classList.add('cool');
-}
+listItems.forEach(item => {
+    item.classList.add('cool');
+    item.innerHTML = counter + '. ' + item.innerHTML; // Adding a number to each item
+    counter++;
+});
 
 // ADD NUMBER OF ITEMS IN THE LIST TO THE HEADING
 // h2 element
-let heading = document.querySelector('h2');
+const heading = document.querySelector('h2');
+
 // No. of <li> elements
-let numberOfItems = allListItems.length;
+const numberOfItems = listItems.length;
+
 // Content
-let headingContent = 'Buy groceries - ' + numberOfItems + ' items';
+const headingContent = `${numberOfItems} items in the list`;
+
 // Update h2 using innerHTML (not textContent) because it contains markup
 heading.innerHTML = headingContent;
+
 
 
 
